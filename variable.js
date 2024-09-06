@@ -233,7 +233,21 @@ const obj_ = {
     },
     deatialsArrrow : ()=>{
         console.log(this)
+        function jh(){console.log(this)}
     }
 }
 obj.deatials();
 obj.deatialsArrrow();
+
+// ^ this -> Arrow {parent}
+// ^ this -> normal function {global}
+// ^ this -> arrow.method {parent}
+// ^ this -> normal function method {object}
+
+const onj = {
+    firstName: "Adams",
+    lastName: "guru",
+    fullname: function(){
+        return this.firstName + " " + this.lastName;
+    }
+}
