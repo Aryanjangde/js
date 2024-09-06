@@ -215,3 +215,25 @@ a = function(){
 console.log(a);
 console.log(a);
 a();
+
+// * if "this" is in a function it points to window
+// * "this" by default point to a window
+// * "this" in a method it will point to the obj
+// ^ in case of a ()=>{} "this" will point to the parent scope
+// ! parent is the place where we can execute the command
+
+console.log(this);
+const obj_ = {
+    name:"adams",
+    age:28,
+    deatials: function(){
+        console.log(this)
+        (()=>{console.log(this)})()
+
+    },
+    deatialsArrrow : ()=>{
+        console.log(this)
+    }
+}
+obj.deatials();
+obj.deatialsArrrow();
