@@ -251,3 +251,12 @@ const onj = {
         return this.firstName + " " + this.lastName;
     }
 }
+
+console.log("start!");
+
+setTimeout(()=>{
+    console.log("Timout!")
+})
+
+Promise.resolve("PRomise").then(res => console.log(res))
+console.log("End!")
